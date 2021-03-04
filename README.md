@@ -15,6 +15,7 @@ The `Extensions for AWS managed shells` script installs and/or updates the follo
 - [AWS IR](https://aws_ir.readthedocs.io/en/latest/) - [MIT license - [link](https://aws-ir.readthedocs.io/en/latest/about.html#license)]
 - [awsls](https://github.com/jckuester/awsls) - [MIT license - [link](https://github.com/jckuester/awsls/blob/master/LICENSE.md)]
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) - [Apache Software license v2 - [link](https://github.com/kubernetes/kubectl/blob/master/LICENSE)]
+- [kubecolor](https://github.com/dty1er/kubecolor) - [MIT license - [link](https://github.com/dty1er/kubecolor/blob/main/LICENSE)]
 - [IAM Authenticator for AWS](https://github.com/kubernetes-sigs/aws-iam-authenticator) - [Apache Software license v2 - [link](https://github.com/kubernetes-sigs/aws-iam-authenticator/blob/master/LICENSE)]
 - [helm version 3](https://github.com/helm/helm) - [Apache Software license v2 - [link](https://github.com/helm/helm/blob/master/LICENSE)]
 - [eksctl](https://github.com/weaveworks/eksctl) - [Apache Software license v2 - [link](https://github.com/weaveworks/eksctl/blob/master/LICENSE)]

@@ -143,6 +143,14 @@ curl -sLO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s h
     && chmod +x ./kubectl \
     && sudo mv ./kubectl /usr/local/bin/kubectl
 
+# setup kubecolor 
+LATEST=$(curl -s https://api.github.com/repos/dty1er/kubecolor/releases/latest) \
+&& X86URL=$(echo $LATEST | jq -r '.assets[].browser_download_url' | grep Linux_x86_64.tar.gz) \
+&& X86ARTIFACT=$(echo $LATEST  | jq -r '.assets[].name' | grep Linux_x86_64.tar.gz) \
+&& curl -L -O $X86URL \
+&& tar -zxvf $X86ARTIFACT \
+&& sudo mv kubecolor /usr/local/bin/kubecolor 
+
 # setup the IAM authenticator for aws (for Amazon EKS)
 LATEST=$(curl -s https://api.github.com/repos/kubernetes-sigs/aws-iam-authenticator/releases/latest) \
 && X86URL=$(echo $LATEST | jq -r '.assets[].browser_download_url' | grep linux_amd64) \

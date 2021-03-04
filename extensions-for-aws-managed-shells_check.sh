@@ -127,6 +127,9 @@ errorcheck awsls
 logger "green" "checking kubectl..."
 kubectl version --client=true 
 errorcheck kubectl 
+logger "green" "checking kubecolor..."
+kubecolor version --client=true 
+errorcheck kubecolor 
 logger "green" "checking aws-iam-authenticator..."
 aws-iam-authenticator version
 errorcheck aws-iam-authenticator
