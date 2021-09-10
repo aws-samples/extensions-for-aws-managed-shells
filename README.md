@@ -12,7 +12,6 @@ The `Extensions for AWS managed shells` script installs and/or updates the follo
 - [AWS CDK](https://github.com/awslabs/aws-cdk) - [Apache Software license v2 - [link](https://github.com/aws/aws-cdk/blob/master/LICENSE)]
 - [CDK8s](https://cdk8s.io/) - [Apache Software license v2 - [link](https://github.com/awslabs/cdk8s/blob/master/LICENSE)]
 - [SAM CLI](https://github.com/aws/aws-sam-cli) - [Apache Software license v2 - [link](https://github.com/aws/aws-sam-cli/blob/develop/LICENSE)]
-- [AWS IR](https://aws_ir.readthedocs.io/en/latest/) - [MIT license - [link](https://aws-ir.readthedocs.io/en/latest/about.html#license)]
 - [awsls](https://github.com/jckuester/awsls) - [MIT license - [link](https://github.com/jckuester/awsls/blob/master/LICENSE.md)]
 - [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/) - [Apache Software license v2 - [link](https://github.com/kubernetes/kubectl/blob/master/LICENSE)]
 - [kubecolor](https://github.com/dty1er/kubecolor) - [MIT license - [link](https://github.com/dty1er/kubecolor/blob/main/LICENSE)]

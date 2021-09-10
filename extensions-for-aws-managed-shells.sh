@@ -3,6 +3,8 @@
 export NODE_VERSION=12.20.0
 
 ################## SETUP ENV ###############################
+#EKS-ANYWHERE EKSCTL EXTENSION
+export EKSA_RELEASE="0.5.0" OS="$(uname -s | tr A-Z a-z)"
 ### OCTANT
 # browser autostart at octant launch is disabled
 # ip address and port are modified (to better work with Cloud9)  
@@ -124,12 +126,6 @@ sudo npm i -g cdk8s-cli
 # setup SAM CLI 
 sudo pip3 install aws-sam-cli --upgrade
 
-# setup aws_ir 
-git clone https://github.com/ThreatResponse/aws_ir.git
-cd aws_ir
-pip install . # this fails with pip3 (TBD)
-cd ..
-
 # setup awsls 
 LATEST=$(curl -s https://api.github.com/repos/jckuester/awsls/releases/latest) \
 && X86URL=$(echo $LATEST | jq -r '.assets[].browser_download_url' | grep linux_amd64.tar.gz) \
@@ -165,8 +161,14 @@ curl -sLo get_helm.sh https://raw.githubusercontent.com/helm/helm/master/scripts
  && ./get_helm.sh
 
 # setup eksctl (latest at time of docker build)
-curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp \
+curl --silent --location "https://github.com/weaveworks/eksctl/releases/latest/download/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp \
     && sudo mv -v /tmp/eksctl /usr/local/bin
+
+# setup eks-anywhere extension for eksctl (specific version)
+curl "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/1/artifacts/eks-a/v${EKSA_RELEASE}/${OS}/eksctl-anywhere-v${EKSA_RELEASE}-${OS}-amd64.tar.gz" \
+    --silent --location \
+    | tar xz ./eksctl-anywhere
+sudo mv ./eksctl-anywhere /usr/local/bin/
 
 # setup kubecfg 
 LATEST=$(curl -s https://api.github.com/repos/bitnami/kubecfg/releases/latest) \

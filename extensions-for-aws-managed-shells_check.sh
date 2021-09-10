@@ -118,9 +118,6 @@ errorcheck cdk8s
 logger "green" "checking SAM cli..."
 sam --version
 errorcheck sam
-logger "green" "checking AWS_ri..."
-aws_ir -h
-errorcheck aws_ir
 logger "green" "checking awsls..."
 awsls --version
 errorcheck awsls
@@ -139,6 +136,9 @@ errorcheck helm
 logger "green" "checking eksctl..."
 eksctl version 
 errorcheck eksctl 
+logger "green" "checking eksctl anywhere..."
+eksctl anywhere version 
+errorcheck eksctl-anywhere 
 logger "green" "checking kubecfg..."
 kubecfg version 
 errorcheck kubecfg
