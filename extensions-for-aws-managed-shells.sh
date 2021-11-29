@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export NODE_VERSION=12.20.0
+export NODE_VERSION=16.13.0
 
 ################## SETUP ENV ###############################
 #EKS-ANYWHERE EKSCTL EXTENSION
