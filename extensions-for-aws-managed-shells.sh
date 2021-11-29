@@ -76,6 +76,10 @@ mkdir -p ${NVM_DIR} \
  && nvm alias default $NODE_VERSION \
  && nvm use default
 
+
+# Upgrade NPM
+sudo npm install -g npm
+
 # setup Typescript (latest at time of docker build)
 npm install -g typescript
 
