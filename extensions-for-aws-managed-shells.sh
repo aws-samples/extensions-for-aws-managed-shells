@@ -171,7 +171,7 @@ curl "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/1/artifacts/eks-a
 sudo mv ./eksctl-anywhere /usr/local/bin/
 
 # setup kubecfg 
-LATEST=$(curl -s https://api.github.com/repos/bitnami/kubecfg/releases/latest) \
+LATEST=$(curl -s https://api.github.com/repositories/91519321/releases/latest) \
 && X86URL=$(echo $LATEST | jq -r '.assets[].browser_download_url' | grep linux-amd64) \
 && curl -sLo kubecfg $X86URL \
 && chmod +x ./kubecfg \
