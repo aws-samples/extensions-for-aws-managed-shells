@@ -140,7 +140,7 @@ curl -sLO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s h
     && sudo mv ./kubectl /usr/local/bin/kubectl
 
 # setup kubecolor 
-LATEST=$(curl -s https://api.github.com/repos/dty1er/kubecolor/releases/latest) \
+LATEST=$(curl -s curl -s https://api.github.com/repositories/302255735/releases/latest) \
 && X86URL=$(echo $LATEST | jq -r '.assets[].browser_download_url' | grep Linux_x86_64.tar.gz) \
 && X86ARTIFACT=$(echo $LATEST  | jq -r '.assets[].name' | grep Linux_x86_64.tar.gz) \
 && curl -L -O $X86URL \
