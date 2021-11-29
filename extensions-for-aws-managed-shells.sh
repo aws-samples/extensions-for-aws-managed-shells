@@ -80,7 +80,7 @@ mkdir -p ${NVM_DIR} \
 npm install -g typescript
 
 # setup pip (latest at time of docker build)
-curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
+curl -s https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py \
    && python get-pip.py
  
 ########################################
