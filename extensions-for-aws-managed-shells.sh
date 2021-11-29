@@ -81,7 +81,7 @@ mkdir -p ${NVM_DIR} \
 sudo npm install -g npm
 
 # setup Typescript (latest at time of docker build)
-npm install -g typescript
+sudo npm install -g typescript
 
 # setup pip (latest at time of docker build)
 curl -s https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py \
