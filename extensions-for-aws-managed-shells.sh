@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export NODE_VERSION=12.20.0
+export NODE_VERSION=16.13.0
 
 ################## SETUP ENV ###############################
 #EKS-ANYWHERE EKSCTL EXTENSION
@@ -76,11 +76,15 @@ mkdir -p ${NVM_DIR} \
  && nvm alias default $NODE_VERSION \
  && nvm use default
 
+
+# Upgrade NPM
+sudo npm install -g npm
+
 # setup Typescript (latest at time of docker build)
-npm install -g typescript
+sudo npm install -g typescript
 
 # setup pip (latest at time of docker build)
-curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py \
+curl -s https://bootstrap.pypa.io/pip/2.7/get-pip.py -o get-pip.py \
    && python get-pip.py
  
 ########################################
@@ -140,7 +144,7 @@ curl -sLO "https://storage.googleapis.com/kubernetes-release/release/$(curl -s h
     && sudo mv ./kubectl /usr/local/bin/kubectl
 
 # setup kubecolor 
-LATEST=$(curl -s https://api.github.com/repos/dty1er/kubecolor/releases/latest) \
+LATEST=$(curl -s curl -s https://api.github.com/repositories/302255735/releases/latest) \
 && X86URL=$(echo $LATEST | jq -r '.assets[].browser_download_url' | grep Linux_x86_64.tar.gz) \
 && X86ARTIFACT=$(echo $LATEST  | jq -r '.assets[].name' | grep Linux_x86_64.tar.gz) \
 && curl -L -O $X86URL \
@@ -171,7 +175,7 @@ curl "https://anywhere-assets.eks.amazonaws.com/releases/eks-a/1/artifacts/eks-a
 sudo mv ./eksctl-anywhere /usr/local/bin/
 
 # setup kubecfg 
-LATEST=$(curl -s https://api.github.com/repos/bitnami/kubecfg/releases/latest) \
+LATEST=$(curl -s https://api.github.com/repositories/91519321/releases/latest) \
 && X86URL=$(echo $LATEST | jq -r '.assets[].browser_download_url' | grep linux-amd64) \
 && curl -sLo kubecfg $X86URL \
 && chmod +x ./kubecfg \
