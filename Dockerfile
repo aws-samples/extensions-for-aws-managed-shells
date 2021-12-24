@@ -1,4 +1,4 @@
-FROM amazonlinux:2
+FROM public.ecr.aws/docker/library/amazonlinux:2
 
 ADD extensions-for-aws-managed-shells.sh extensions-for-aws-managed-shells_check.sh ./
 RUN yum install -y sudo 
