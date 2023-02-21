@@ -197,10 +197,10 @@ LATEST=$(curl -s https://api.github.com/repos/ksonnet/ksonnet/releases/latest) \
 
 # setup k9s 
 LATEST=$(curl -s https://api.github.com/repos/derailed/k9s/releases/latest) \
-&& X86URL=$(echo $LATEST | jq -r '.assets[].browser_download_url' | grep Linux_x86_64.tar.gz) \
-&& X86ARTIFACT=$(echo $LATEST  | jq -r '.assets[].name' | grep Linux_x86_64.tar.gz) \
-&& curl -L -O $X86URL \
-&& tar -zxvf $X86ARTIFACT \
+&& X64URL=$(echo $LATEST | jq -r '.assets[].browser_download_url' | grep Linux_amd64.tar.gz) \
+&& X64ARTIFACT=$(echo $LATEST  | jq -r '.assets[].name' | grep Linux_amd64.tar.gz) \
+&& curl -L -O $X64URL \
+&& tar -zxvf $X64ARTIFACT \
 && sudo mv k9s /usr/local/bin/k9s 
 
 # setup docker
